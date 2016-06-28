@@ -63,7 +63,8 @@ class ImageHelper {
 			}
 		}
 		$op = new Image\Operation\Resize($w, $h, $crop);
-		return self::_operate($src, $op, $force);
+		$ret = self::_operate($src, $op, $force);
+		return str_replace('//app', '/app', $ret); //temporary fix
 	}
 
 	/**
